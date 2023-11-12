@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fd1720c30a28064c7f730bb6cf4c619",
+    "content-hash": "5fceeff3b0f043ff71376ca1eb70168a",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -10303,6 +10303,59 @@
                 }
             ],
             "time": "2021-07-28T10:34:58+00:00"
+        },
+        {
+            "name": "timwassenburg/laravel-trait-generator",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/timwassenburg/laravel-trait-generator.git",
+                "reference": "c76923f663343c30381e918a25a8f1db6c517d0f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/timwassenburg/laravel-trait-generator/zipball/c76923f663343c30381e918a25a8f1db6c517d0f",
+                "reference": "c76923f663343c30381e918a25a8f1db6c517d0f",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "TimWassenburg\\TraitGenerator\\TraitGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TimWassenburg\\TraitGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Wassenburg"
+                }
+            ],
+            "description": "Generate Laravel Traits",
+            "homepage": "https://github.com/timwassenburg/laravel-trait-generator",
+            "keywords": [
+                "artisan",
+                "cli",
+                "generator",
+                "laravel",
+                "pattern",
+                "php",
+                "trait"
+            ],
+            "support": {
+                "issues": "https://github.com/timwassenburg/laravel-trait-generator/issues",
+                "source": "https://github.com/timwassenburg/laravel-trait-generator/tree/v1.0.0"
+            },
+            "time": "2023-04-21T15:43:52+00:00"
         }
     ],
     "aliases": [],
