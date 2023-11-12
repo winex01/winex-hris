@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5fceeff3b0f043ff71376ca1eb70168a",
+    "content-hash": "0b8a9782e72d5cd914908e3ec66bcd36",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -9876,6 +9876,51 @@
             "time": "2023-02-07T11:34:05+00:00"
         },
         {
+            "name": "shaka/laravel-trait-generator",
+            "version": "dev-stable",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shahsawoodshinwari/laravel-trait-generator.git",
+                "reference": "77d6e38611c745fa0de970d1e37f2920fcf14dbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shahsawoodshinwari/laravel-trait-generator/zipball/77d6e38611c745fa0de970d1e37f2920fcf14dbb",
+                "reference": "77d6e38611c745fa0de970d1e37f2920fcf14dbb",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Shaka\\LaravelTraitGenerator\\LaravelTraitGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Shaka\\LaravelTraitGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shah Sawood",
+                    "email": "shahsawoodshinwari@gmail.com"
+                }
+            ],
+            "description": "A Laravel package to generate traits",
+            "support": {
+                "issues": "https://github.com/shahsawoodshinwari/laravel-trait-generator/issues",
+                "source": "https://github.com/shahsawoodshinwari/laravel-trait-generator/tree/stable"
+            },
+            "time": "2023-11-09T11:20:05+00:00"
+        },
+        {
             "name": "spatie/backtrace",
             "version": "1.5.3",
             "source": {
@@ -10303,64 +10348,13 @@
                 }
             ],
             "time": "2021-07-28T10:34:58+00:00"
-        },
-        {
-            "name": "timwassenburg/laravel-trait-generator",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/timwassenburg/laravel-trait-generator.git",
-                "reference": "c76923f663343c30381e918a25a8f1db6c517d0f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/timwassenburg/laravel-trait-generator/zipball/c76923f663343c30381e918a25a8f1db6c517d0f",
-                "reference": "c76923f663343c30381e918a25a8f1db6c517d0f",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "TimWassenburg\\TraitGenerator\\TraitGeneratorServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TimWassenburg\\TraitGenerator\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tim Wassenburg"
-                }
-            ],
-            "description": "Generate Laravel Traits",
-            "homepage": "https://github.com/timwassenburg/laravel-trait-generator",
-            "keywords": [
-                "artisan",
-                "cli",
-                "generator",
-                "laravel",
-                "pattern",
-                "php",
-                "trait"
-            ],
-            "support": {
-                "issues": "https://github.com/timwassenburg/laravel-trait-generator/issues",
-                "source": "https://github.com/timwassenburg/laravel-trait-generator/tree/v1.0.0"
-            },
-            "time": "2023-04-21T15:43:52+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "shaka/laravel-trait-generator": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

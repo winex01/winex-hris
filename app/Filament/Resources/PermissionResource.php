@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
+use App\Traits\DateFormat;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
@@ -16,6 +17,8 @@ use App\Filament\Resources\PermissionResource\RelationManagers;
 
 class PermissionResource extends Resource
 {
+    use DateFormat;
+
     protected static ?string $model = Permission::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-key';
@@ -31,7 +34,7 @@ class PermissionResource extends Resource
                         ->required()
                         ->minLength(2)
                         ->maxLength(255)
-                        ->unique() 
+                        ->unique(ignoreRecord: true),
                 ])
             ]);
     }
@@ -41,12 +44,15 @@ class PermissionResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->searchable()
+                    ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

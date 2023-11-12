@@ -5,10 +5,13 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
+use App\Traits\DateFormat;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Spatie\Permission\Models\Role;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\RoleResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -16,6 +19,8 @@ use App\Filament\Resources\RoleResource\RelationManagers;
 
 class RoleResource extends Resource
 {
+    use DateFormat;
+    
     protected static ?string $model = Role::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-group';
@@ -27,12 +32,16 @@ class RoleResource extends Resource
         return $form
             ->schema([
                 Card::make([
-                    Forms\Components\TextInput::make('name')
+                    TextInput::make('name')
                         ->required()
                         ->minLength(2)
                         ->maxLength(255)
-                        ->unique()
-                    ])
+                        ->unique(ignoreRecord: true),
+                    Select::make('permissions')
+                        ->multiple()
+                        ->relationship('permissions', 'name')    
+                        ->preload()
+                ])
             ]);
     }
 
@@ -41,12 +50,15 @@ class RoleResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->searchable()
+                    ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
